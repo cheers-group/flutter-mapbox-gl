@@ -166,7 +166,7 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
             for feature in features {
                 let dictionary = feature.geoJSONDictionary()
                 if  let theJSONData = try? JSONSerialization.data(withJSONObject: dictionary, options: []),
-                    let theJSONText = String(data: theJSONData, encoding: .ascii) {
+                    let theJSONText = String(data: theJSONData, encoding: .utf8) {
                     featuresJson.append(theJSONText)
                 }
             }
