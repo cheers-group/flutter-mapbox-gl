@@ -154,19 +154,19 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
             var reply = [String: NSObject]()
             var features:[MGLFeature] = []
             if let x = arguments["x"] as? Double, let y = arguments["y"] as? Double {
-                features = mapView.visibleFeatures(at: CGPoint(x: x, y: y), styleLayerIdentifiers: layerIds, predicate: filterExpression)
+                features = mapView.visibleFeatures(at: CGPoint(x: x, y: y), styleLayerIdentifiers: Set(["api-managed-tileset"]), predicate: filterExpression)
             }
             if  let top = arguments["top"] as? Double,
                 let bottom = arguments["bottom"] as? Double,
                 let left = arguments["left"] as? Double,
                 let right = arguments["right"] as? Double {
-                features = mapView.visibleFeatures(in: CGRect(x: left, y: top, width: right, height: bottom), styleLayerIdentifiers: layerIds, predicate: filterExpression)
+                features = mapView.visibleFeatures(in: CGRect(x: left, y: top, width: right-left, height: bottom-top), styleLayerIdentifiers: Set(["api-managed-tileset"]), predicate: filterExpression)
             }
             var featuresJson = [String]()
             for feature in features {
                 let dictionary = feature.geoJSONDictionary()
                 if  let theJSONData = try? JSONSerialization.data(withJSONObject: dictionary, options: []),
-                    let theJSONText = String(data: theJSONData, encoding: .ascii) {
+                    let theJSONText = String(data: theJSONData, encoding: .utf8) {
                     featuresJson.append(theJSONText)
                 }
             }

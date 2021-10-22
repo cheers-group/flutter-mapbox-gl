@@ -205,7 +205,7 @@ abstract class MapboxGlPlatform {
   }
 
   Future<List> queryRenderedFeaturesInRect(
-      Rect rect, List<String> layerIds, String? filter) async {
+      Rect rect, List<String> layerIds, List<Object>? filter) async {
     throw UnimplementedError(
         'queryRenderedFeaturesInRect() has not been implemented.');
   }
