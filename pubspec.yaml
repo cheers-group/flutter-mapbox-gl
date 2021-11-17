@@ -10,10 +10,12 @@ dependencies:
     git:
       url: https://github.com/cheers-group/flutter-mapbox-gl.git
       path: mapbox_gl_platform_interface
+      ref: master-cheers
   mapbox_gl_web:
     git:
       url: https://github.com/cheers-group/flutter-mapbox-gl.git
       path: mapbox_gl_web
+      ref: master-cheers
 
 dependency_overrides:
   mapbox_gl_platform_interface:
