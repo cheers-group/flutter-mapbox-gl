@@ -20,10 +20,8 @@ dependencies:
 dependency_overrides:
   mapbox_gl_platform_interface:
     path: ./mapbox_gl_platform_interface
-    ref: master-cheers
   mapbox_gl_web:
     path: ./mapbox_gl_web
-    ref: master-cheers
 
 flutter:
   plugin:
