@@ -19,6 +19,7 @@ dependencies:
   mapbox_gl_platform_interface:
     git:
       url: https://github.com/cheers-group/flutter-mapbox-gl.git
+      ref: master-cheers
       path: mapbox_gl_platform_interface
   mapbox_gl_dart: ^0.2.0-nullsafety
   image: ^3.0.0
